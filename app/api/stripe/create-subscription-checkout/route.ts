@@ -20,7 +20,9 @@ export async function POST(req: NextRequest) {
   }
 
   const metadata = {
-    testId: body.testId
+    testId: body.testId,
+    price,
+    userId
   }
 
   const customerId = await getOrCreateCustomer(userId, userEmail);
@@ -32,7 +34,6 @@ export async function POST(req: NextRequest) {
       payment_method_types: ["card"],
       success_url: `${req.headers.get("origin")}/success`,
       cancel_url: `${req.headers.get("origin")}/cancel`,
-      ...(userEmail && { customer_email: userEmail }),
       customer: customerId,
       metadata
     });

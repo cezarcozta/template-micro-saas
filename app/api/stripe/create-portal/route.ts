@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
       return_url: `${req.headers.get('origin')}/dashboard`,
     })
 
-    return NextResponse.json({ url: portalSession.url }, { status: 404 });
+    return NextResponse.json({ url: portalSession.url }, { status: 200 });
   } catch (error) {
     console.error(error)
   }
