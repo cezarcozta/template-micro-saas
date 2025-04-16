@@ -1,5 +1,6 @@
 import { handleGoogleAuth } from "@/app/actions/handleGoogleAuth";
 import { auth } from "@/app/lib/auth";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function Dashboard() {
@@ -16,6 +17,8 @@ export default async function Dashboard() {
           <button type="submit">LOGOUT</button>
         </form>
       )}
+
+      <Link href="/payments">Pagamentos</Link>
     </main>
   );
 }
