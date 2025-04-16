@@ -1,6 +1,7 @@
+import 'server-only';
 import { db } from '@/app/lib/firebase';
 import stripe from '@/app/lib/strtipe';
-import 'server-only';
+
 
 export async function getOrCreateCustomer(userId: string, userEmail: string) {
   try {
